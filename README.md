@@ -30,7 +30,8 @@ All resources are tagged and created using Terraform.
 
 ---
 
-## ⚙️ Terraform Structure
+<h2>⚙️ Terraform Structure</h2>
+<pre>
 terraform/
 ├── main.tf          # Core infrastructure
 ├── variables.tf     # Input variables
@@ -38,6 +39,7 @@ terraform/
 ├── versions.tf      # Terraform & provider versions
 ├── outputs.tf       # Useful outputs
 └── .terraform.lock.hcl
+</pre>
 ---
 
 ## 🔄 CI/CD Pipeline (GitHub Actions)
