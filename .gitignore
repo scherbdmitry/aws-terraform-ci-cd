@@ -4,7 +4,7 @@
 
 # Local .terraform directories
 **/.terraform/*
-.terraform.lock.hcl
+
 
 # Terraform state files (never commit)
 *.tfstate
@@ -48,7 +48,7 @@ terraform.rc
 # =========================
 
 *.log
-plan.out
+**/plan.out
 
 
 # =========================
