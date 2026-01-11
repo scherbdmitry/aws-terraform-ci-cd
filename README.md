@@ -16,6 +16,7 @@ The project focuses on:
 
 The infrastructure provisions the following AWS resources:
 
+  
 - **VPC** with DNS enabled
 - **2 public subnets** (multi-AZ)
 - **Internet Gateway + public routing**
@@ -26,11 +27,10 @@ The infrastructure provisions the following AWS resources:
   - Apache installed via `user_data`
   - Demo web page exposed on port 80
 
-All resources are tagged and created using Terraform.
 ```mermaid
 flowchart TB
-  U["User Browser"] -->|HTTP :80| IGW["Internet Gateway"]
-  IGW --> RT["Public Route Table\n0.0.0.0/0 → IGW"]
+  U["User Browser"] -->|"HTTP :80"| IGW["Internet Gateway"]
+  IGW --> RT["Public Route Table\n0.0.0.0/ -> IGW"]
 
   RT --> SubA["Public Subnet A"]
   RT --> SubB["Public Subnet B"]
@@ -42,6 +42,8 @@ flowchart TB
   IAM["IAM Role + Instance Profile"] --> EC2
   SSM["SSM Session Manager"] --> IAM
   SSM --> EC2
+```
+
 ---
 
 <h2>⚙️ Terraform Structure</h2>
