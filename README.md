@@ -38,7 +38,6 @@ terraform/
 ├── versions.tf      # Terraform & provider versions
 ├── outputs.tf       # Useful outputs
 └── .terraform.lock.hcl
-
 ---
 
 ## 🔄 CI/CD Pipeline (GitHub Actions)
