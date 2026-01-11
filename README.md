@@ -77,7 +77,7 @@ terraform fmt
 terraform validate
 terraform plan
 terraform apply
-
+```
 After apply, Terraform outputs a public URL for the demo page.
 
 🔐 Security Notes
