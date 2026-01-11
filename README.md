@@ -27,7 +27,21 @@ The infrastructure provisions the following AWS resources:
   - Demo web page exposed on port 80
 
 All resources are tagged and created using Terraform.
+```mermaid
+flowchart TB
+  U[User Browser] -->|HTTP :80| IGW[Internet Gateway (IGW)]
+  IGW --> RT[Public Route Table\n0.0.0.0/0 -> IGW]
 
+  RT --> SubA[Public Subnet A]
+  RT --> SubB[Public Subnet B]
+
+  SubA --> EC2[EC2 Instance\nApache Demo Page]
+  SubB -. (reserved for scale) .-> EC2
+
+  SG[Security Group\nInbound: 80\nNo SSH] --> EC2
+  IAM[IAM Role + Instance Profile] --> EC2
+  SSM[SSM Session Manager] --> IAM
+  SSM --> EC2
 ---
 
 <h2>⚙️ Terraform Structure</h2>
